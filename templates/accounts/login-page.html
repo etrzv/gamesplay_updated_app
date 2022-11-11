@@ -1,0 +1,13 @@
+{% extends 'base/base.html' %}
+{% block page_content %}
+    <section id="" class="login">
+    <form id="login" method="post" action="{% url 'login user' %}">
+        {{ form }}
+        <input type="hidden" name="next" value="{{ next }}">
+        <button type="submit">Log in</button>
+        {% csrf_token %}
+    </form>
+        <div class="second-option"><p>Don't have account? <a href="{% url 'register user' %}">Register</a></p>
+        </div>
+    </section>
+{% endblock %}
